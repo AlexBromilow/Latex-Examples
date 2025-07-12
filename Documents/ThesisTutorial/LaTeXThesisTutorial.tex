@@ -1,0 +1,95 @@
+\documentclass[twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr, lastpage}
+% \usepackage[Glenn]{fncychap}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{siunitx}
+\usepackage{setspace}
+\usepackage[acronym, automake]{glossaries-extra}
+\onehalfspacing
+
+\setabbreviationstyle[acronym]{long-short}
+\newacronym{dtb}{DTB}{Doctor Trefor Bazett}
+\makeglossaries
+
+\newtcbtheorem{theo}{Theorem}{}{theorem}
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %Use with EXTREME CAUTION
+
+\pagestyle{fancy}
+\lhead{Alec's awesome LaTeX guide}
+\rhead{Sponsored by Overleaf!}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+\addbibresource{references.bib}
+
+\hypersetup{
+    colorlinks = true,
+    linkcolor= blue,
+    urlcolor = red,
+    pdftitle = {How to write a thesis}
+}
+\usepackage[skip=20pt, indent=0pt]{parskip}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newgeometry{
+    top=0.75in,
+    bottom=0.75in,
+    outer=0.75in,
+    inner=1.5in
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\cv}[2]{\begin{bmatrix}
+        #1 \\
+        #2 \\
+    \end{bmatrix}}
+
+\title{YouTube Thesis\\ 
+{\Large University of YouTube}}
+\author{Alec Gideon}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\chapter*{Abstract}
+
+A Thesis about using YouTube. It is really cool.
+
+\chapter*{Dedication}
+
+For my subscribers\dots
+
+\chapter*{Acknowledgement}
+I want to thank \dots
+
+\tableofcontents
+
+\listoffigures
+
+\input{Chapters/ch1_YoutTubeButtons.tex}
+\input{Chapters/ch2_Subscribers.tex}
+\input{Chapters/ch3_Packages.tex}
+
+\input{Chapters/Conclusions.tex}
+
+\appendix
+
+\input{Chapters/Appendix.tex}
+
+\printbibliography
+
+\printglossary[type=\acronymtype]
+\end{document}

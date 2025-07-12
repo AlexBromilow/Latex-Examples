@@ -1,0 +1,25 @@
+{"latex-workshop.latex.tools": [
+  {
+    "name": "pdflatex",
+    "command": "pdflatex",
+    "args": [
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "%DOC%"
+    ]
+  },
+  {
+    "name": "biber",
+    "command": "biber",
+    "args": ["%DOCFILE%"]
+  }
+],
+"latex-workshop.latex.recipes": [
+  {
+    "name": "pdflatex -> biber -> pdflatex x2",
+    "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+  }
+],
+"latex-workshop.latex.autoBuild.run": "onFileChange",
+"latex-workshop.formatting.latex": "latexindent",
+}

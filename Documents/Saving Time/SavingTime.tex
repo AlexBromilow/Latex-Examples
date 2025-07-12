@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage{cleveref}
+\usepackage{Stylesheets/MyStylesheet}
+\includeonly{Subsections/Subsection2}
+
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\section{New Commands}
+$\displaystyle\frac{\partial z}{\partial x}$ vs $\pd{z}{x}$
+
+\section{Conditional Formatting}
+This is question 1. \solution{This is my solution}
+\section{Stylesheets}
+Look at markup for how Stylesheets are used
+\section{Multiple Files}
+\include{Subsections/Subsection1} %Use input to not start on new page
+\include{Subsections/Subsection2}
+
+\section{Be Semantic}
+
+Compare \textit{this} and \emph{this}.
+
+\begin{theorem}
+    \label{thm1}
+    Compare \textit{this} and \emph{this}.
+\end{theorem}
+
+\large{\bf This is some big text}.
+
+\subsection{This is some big text}
+
+\section{Cleveref}
+\begin{equation}
+    \label{pd1}
+    \pd{z}{x}
+\end{equation}
+\begin{equation}
+    \label{pd2}
+    \pd{z}{x}
+\end{equation}
+\begin{equation}
+    \label{pd3}
+    \pd{z}{x}
+\end{equation}
+\begin{equation}
+    \label{pd4}
+    \pd{z}{x}
+\end{equation}
+
+I can now refer to \cref{pd1}. I can also do \cref{pd1,pd2,thm1,pd3}
+
+\section{Template Files}
+
+\end{document}
+

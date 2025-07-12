@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage{array, multirow}
+\usepackage[table]{xcolor}
+
+\setlength{\tabcolsep}{18pt} %Gap before text starts
+\renewcommand{\arraystretch}{1.5} %Cell height scaling
+\setlength{\arrayrulewidth}{0.5mm}%Table border thickness
+\arrayrulecolor{blue} %Table border color
+\newcolumntype{s}{>{\columncolor{blue!20}} c}
+
+\begin{document}
+
+\section{Tables}
+\begin{tabular}{|l|b{4cm}|}
+    \hline
+    This & is                                                       \\
+    \hline
+    a    & table and it has a really really really really long cell \\
+    \hline
+\end{tabular}
+
+\vspace{1in}
+
+\begin{tabular}{|c|s|c|}
+    \hline
+    \multicolumn{3}{|c|}{A multiple column}                       \\
+    \hline
+    \rowcolor{yellow!50} 1            & 2 & \cellcolor{black!10}3 \\
+    \hline
+    \multirow{2}{2cm}{A multiple row} & 5 & 6                     \\
+                                      & 8 & 9                     \\
+    \hline
+\end{tabular}
+
+\vspace{1in}
+
+\rowcolors{2}{red!30}{green!30}
+\begin{table}[!h]
+    \label{Example}
+    \caption{Table examples}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        1  & 2  & 3  \\
+        \hline
+        4  & 5  & 6  \\
+        \hline
+        7  & 8  & 9  \\
+        \hline
+        10 & 11 & 12 \\
+        \hline
+        13 & 14 & 15 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Check out table \ref{Example}
+
+\end{document}
